@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Checkbox_Category_Validation</fullName>
+    <active>true</active>
+    <description>This validation rule checks whether at least one of the Access or Specific Area of Marketing checkboxes are checked when a record is associated to an Account.</description>
+    <errorConditionFormula>Specific_Area_of_Marketing__c = FALSE &amp;&amp;  Access__c = FALSE</errorConditionFormula>
+    <errorMessage>Either the Access checkbox or the Specific Area of Marketing checkbox must be checked when associating a POI to an Account.</errorMessage>
+</ValidationRule>
