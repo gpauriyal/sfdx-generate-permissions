@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { exec, spawn } = require("child_process");
+const { execFile, exec, spawn } = require("child_process");
 const yargs = require('yargs')
 const path = require('path')
 const utils = require('./lib/utils');
@@ -47,26 +47,33 @@ function checkParams() {
 
 async function generatePermissions() {
     let command;
-    let packagePath = path.join(process.cwd(), 'manifest', 'package.xml');
+    let packagePath = path.join('.', 'manifest', 'package.xml');
+    utils.warn("Will fetch FLS and CRUDS from manifest at: " + packagePath);
     if (typeof 'undefined' !== yargs.argv.u && yargs.argv.u) {
         command = 'sfdx force:source:retrieve  -x ' + packagePath + ' -u ' + yargs.argv.u;
     } else {
         command = 'sfdx force:source:retrieve -x ' + packagePath
     }
+    // var child = exec(command);
+    exec(command, (err, stdout, stderr) => {
+        if (err) {
+            utils.error(`======Errors: ${stderr}`);
+            throw err;
+        }
+        utils.log(`=========Results:\n ${stdout}`);
+    });
+    // child.on('data', (data) => {
+    //     console.log(`stdout: ${data}`);
+    // });
+    // child.on('error', function (err) {
+    //     console.log('Failed to start child process.' + err);
+    // });
 
-    var child = spawn(command);
-    child.on('data', (data) => {
-        console.log(`stdout: ${data}`);
-    });
-    child.on('error', function (err) {
-        console.log('Failed to start child process.' + err);
-    });
+    // child.stderr.on('data', (data) => {
+    //     console.error(`stderr: ${data}`);
+    // });
 
-    child.stderr.on('data', (data) => {
-        console.error(`stderr: ${data}`);
-    });
-
-    child.on('unhandledRejection', (err) => {
-        throw err;
-    });
+    // child.on('unhandledRejection', (err) => {
+    //     throw err;
+    // });
 }
