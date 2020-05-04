@@ -2,7 +2,7 @@
   "name": "sfdx-generate-permissions",
   "version": "1.0.0",
   "description": "generate profile permissions from the profile present in the source code and the file present in object metadata in repo",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,21 +22,10 @@
   },
   "homepage": "https://github.com/gpauriyal/sfdx-generate-permissions#readme",
   "dependencies": {
-    "@octokit/auth-basic": "^1.4.3",
-    "@octokit/rest": "^17.6.0",
     "chalk": "^4.0.0",
     "child_process": "^1.0.2",
-    "clear": "^0.1.0",
     "clui": "^0.3.6",
-    "commander": "^5.1.0",
-    "configstore": "^5.0.1",
-    "directory-tree": "^2.2.4",
-    "figlet": "^1.4.0",
-    "inquirer": "^7.1.0",
-    "lodash": "^4.17.15",
-    "minimist": "^1.2.5",
-    "simple-git": "^2.2.0",
-    "touch": "^3.1.0",
-    "xmlbuilder": "^15.1.1"
+    "xmlbuilder": "^15.1.1",
+    "yargs": "^15.3.1"
   }
 }
