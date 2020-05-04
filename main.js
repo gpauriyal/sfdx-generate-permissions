@@ -62,18 +62,4 @@ async function generatePermissions() {
         }
         utils.log(`=========Results:\n ${stdout}`);
     });
-    // child.on('data', (data) => {
-    //     console.log(`stdout: ${data}`);
-    // });
-    // child.on('error', function (err) {
-    //     console.log('Failed to start child process.' + err);
-    // });
-
-    // child.stderr.on('data', (data) => {
-    //     console.error(`stderr: ${data}`);
-    // });
-
-    // child.on('unhandledRejection', (err) => {
-    //     throw err;
-    // });
 }
