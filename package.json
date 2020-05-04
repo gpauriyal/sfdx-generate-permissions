@@ -1,8 +1,9 @@
 {
   "name": "sfdx-generate-permissions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "generate profile permissions from the profile present in the source code and the file present in object metadata in repo",
-  "main": "main.js",
+  "main": "./main.js",
+  "bin": "./main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
