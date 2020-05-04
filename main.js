@@ -43,6 +43,7 @@ function checkParams() {
     if (undefined == yargs.argv.d) {
         utils.warn('destination dir not provided. will use current')
     }
+
 }
 
 async function generatePermissions() {
