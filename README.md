@@ -13,13 +13,20 @@ Navigate to project`s SFDX source directory
 ### How to use
 
 - Ensure the current directory is your SFDX root directory
+- Just execute
 
 ```
-node sfdx-generate-permissions -p "<<PATH TO YOUR DEFAULT root folder>> -u <<USERNAME of the SFDX ORG>>
+$ sfdx-generate-permissions
+```
+
+Pass your folder path and manifest location if not in force-app root
+
+```
+sfdx-generate-permissions -p "<<PATH TO YOUR DEFAULT root folder>> -u <<USERNAME of the SFDX ORG>>
 ```
 
 ```
-node sfdx-generate-permissions -p ./force-app/main/default -u test@testg.com
+$ sfdx-generate-permissions -p ./force-app/main/default -u test@testg.com
 ```
 
 ### Options
